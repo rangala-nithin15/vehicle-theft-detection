@@ -1,0 +1,28 @@
+# Monitored Parking Area Polygon Definition
+parking_zone:
+  name: "Main Monitored Parking Area"
+  enabled: true
+  points:
+    - [50, 50]
+    - [1200, 50]
+    - [1200, 700]
+    - [50, 700]
+
+# Proximity and association parameters
+association:
+  interaction_margin_px: 50        # Pixel expansion around vehicle bbox
+  max_distance_px: 150.0           # Maximum distance for proximity association
+  min_persistence_frames: 5        # Frames required before association is considered persistent
+  min_persistence_seconds: 0.5     # Minimum interaction duration in seconds
+  cooldown_frames: 10              # Frames before dropping an active association
+
+# Temporal behavior state machine parameters (Phase 4)
+behavior:
+  movement_threshold_px: 18.0       # Minimum displacement to reject camera jitter and detect movement
+  movement_window_frames: 10       # Rolling frame window for trajectory displacement estimation
+  movement_consecutive_frames: 4    # Consecutive frames exceeding threshold to confirm motion
+  approaching_distance_px: 250.0   # Distance threshold for PERSON_APPROACHING state
+  near_distance_px: 120.0          # Distance threshold for PERSON_NEAR state
+  interaction_duration_sec: 1.0    # Time in seconds required to enter INTERACTION state
+  access_attempt_duration_sec: 2.5 # Time in seconds required to enter ACCESS_ATTEMPT state
+  stationary_duration_sec: 1.5     # Time vehicle must be stationary to reset back to PARKED

@@ -1,0 +1,18 @@
+# Monitored Parking Area Polygon Definition
+# List of (x, y) coordinates forming a closed polygon
+parking_zone:
+  name: "Main Monitored Parking Area"
+  enabled: true
+  points:
+    - [50, 50]
+    - [1200, 50]
+    - [1200, 700]
+    - [50, 700]
+
+# Interaction parameters
+association:
+  interaction_margin_px: 50        # Pixel expansion around vehicle bbox
+  max_distance_px: 150.0           # Maximum distance for proximity association
+  min_persistence_frames: 5        # Frames required before association is considered persistent
+  min_persistence_seconds: 0.5     # Minimum interaction duration in seconds
+  cooldown_frames: 10              # Frames before dropping an active association

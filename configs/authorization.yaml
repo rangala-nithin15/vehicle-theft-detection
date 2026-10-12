@@ -1,0 +1,31 @@
+# Prototype Vehicle Authorization Configuration
+# NOTE: Track IDs in camera streams are dynamic across sessions.
+# This configuration demonstrates the authorization interface,
+# designed to be interfaced with a biometric/Re-ID system in production.
+
+authorization:
+  # Map vehicle IDs to list of authorized person IDs
+  # Example: Vehicle track ID 1 has Person 1 authorized
+  vehicles:
+    "1":
+      authorized_persons:
+        - 1
+        - 2
+    "vehicle_demo_1":
+      authorized_persons:
+        - 1
+        - 3
+
+# Configurable Risk Scoring Weights
+risk_weights:
+  unknown_person: 20            # Person not in authorized list
+  approach: 10                  # Person approaching / near vehicle
+  persistent_interaction: 20    # Person interacting persistently
+  access_attempt: 20            # Prolonged access attempt detected
+  vehicle_movement: 30          # Vehicle physical movement confirmed
+  exit_crossing: 40             # Vehicle exiting monitored parking area
+
+# Risk Level Classification Thresholds (0 - 100)
+risk_thresholds:
+  medium: 40                    # Score >= 40 triggers MEDIUM risk (SUSPICIOUS)
+  high: 70                      # Score >= 70 triggers HIGH risk (POTENTIAL THEFT)
