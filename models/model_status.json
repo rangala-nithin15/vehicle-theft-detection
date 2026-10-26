@@ -1,0 +1,90 @@
+{
+  "detector": {
+    "downloaded": true,
+    "path": "models\\yolo11s-seg.pt",
+    "at": "2026-10-22T19:30:08+00:00",
+    "task": "segment",
+    "num_classes": 80,
+    "class_ids": {
+      "person": 0,
+      "bicycle": 1,
+      "car": 2,
+      "motorcycle": 3,
+      "bus": 5,
+      "truck": 7
+    },
+    "missing_classes": [],
+    "test_image": "ultralytics/assets/bus.jpg",
+    "test_detections": 5,
+    "test_masks": 5,
+    "test_classes": [
+      "bus",
+      "person"
+    ],
+    "mask_shape": [
+      5,
+      640,
+      480
+    ],
+    "verified": true,
+    "verified_at": "2026-10-22T19:30:12+00:00"
+  },
+  "clothing": {
+    "downloaded": true,
+    "path": "models\\segformer_b2_clothes",
+    "revision": "584abc1e1d260e23c0fc627c5217a09b2b461046",
+    "at": "2026-10-22T19:30:23+00:00",
+    "labels": [
+      "Background",
+      "Bag",
+      "Belt",
+      "Dress",
+      "Face",
+      "Hair",
+      "Hat",
+      "Left-arm",
+      "Left-leg",
+      "Left-shoe",
+      "Pants",
+      "Right-arm",
+      "Right-leg",
+      "Right-shoe",
+      "Scarf",
+      "Skirt",
+      "Sunglasses",
+      "Upper-clothes"
+    ],
+    "mode": "segformer",
+    "test_attributes": {
+      "backend": "segformer",
+      "quality": 0.773,
+      "notes": [
+        "outerwear is not distinguished by this model"
+      ],
+      "garments": [
+        "upper-clothes"
+      ],
+      "upper_color": "black",
+      "upper_conf": 0.586,
+      "lower_color": null,
+      "lower_conf": 0.0,
+      "segmentation": "garment",
+      "pattern_upper": {
+        "label": "plain",
+        "edge_density": 0.029
+      }
+    },
+    "verified": true,
+    "verified_at": "2026-10-22T19:30:28+00:00"
+  },
+  "reid_generic": {
+    "downloaded": true,
+    "path": "C:\\Users\\Dharshan\\.cache\\torch\\hub\\checkpoints\\resnet50-11ad3fa6.pth",
+    "at": "2026-10-22T19:30:33+00:00",
+    "embedding_dim": 2048,
+    "unit_norm": true,
+    "verified": true,
+    "verified_at": "2026-10-22T19:30:34+00:00",
+    "note": "shape/normalisation check only, not an accuracy test"
+  }
+}
